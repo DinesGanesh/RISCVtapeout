@@ -1,1 +1,19 @@
 Day1 : Waveform and Screenshots
+Day 1 Completed
+Tasks Accomplished:
+
+✔️ Designed and coded a XOR gate in Verilog
+✔️ Simulated the XOR gate using Icarus Verilog (iverilog)
+✔️ Visualized the simulation waveform using GTKWave
+✔️ Synthesized the design with Yosys
+
+Tools Used:
+iverilog – for simulation
+vvp – for running the compiled simulation
+gtkwave – for viewing waveforms
+yosys – for synthesis and RTL analysis
+Output Highlights:
+
+Functional simulation with correct XOR behavior
+Waveform confirms expected transitions
+Synthesis summary from Yosys with logic optimization
