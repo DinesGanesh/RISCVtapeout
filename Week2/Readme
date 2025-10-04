@@ -1,0 +1,20 @@
+BabySoC is a minimal, open-source System-on-Chip (SoC) developed and released by VSD (VLSI System Design Corp) as an educational platform to help learners and engineers:
+Understand digital design, SoC architecture, and RISC-V integration
+Learn the design flow: from RTL to GDSII
+Simulate and synthesize a full chip using open-source tools
+Library: Sky130 PDK
+
+What Does BabySoC Include?
+A RISC-V core
+PLL
+10-bit DAC
+Written in Verilog for simulation and synthesis
+Integrates cleanly with OpenLANE, the open-source ASIC flow
+
+Toola & library install :
+https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project
+https://github.com/manili/VSDBabySoC.git
+
+Bug Fixing :
+Faced issues with sandpiper-saas installation which can help in converting .tlv to .v files.
+
