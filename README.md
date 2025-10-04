@@ -1,18 +1,17 @@
 # RISCVtapeout
 10 Weeks Schedule of RISC-V VSD_IITGN
 
-Tool Installation: (OpenSource) 
-1.Yosys  - Synthesis 
-2.iVerilog - Verilog Simualtion
-3.GTK Wave - Waveform Viewer
-
+Tool Installation: (OpenSource)   
+1.Yosys  - Synthesis   
+2.iVerilog - Verilog Simualtion  
+3.GTK Wave - Waveform Viewer        
 **Week-1 Day1**: 
 Initial introduction of Test Bench & Stimulus (Test Vectors)
 - Tried to create a new verilog file with a simple XOR gate.
 - Developed test bench(tb) for the XOR gate.
 - Fixed some bugs with the tb Code with the dumpvars.
-- compiler using iverilog, created dump value file and viewed waveform using gtkwave analyser.  
-**Day-2**:
+- compiler using iverilog, created dump value file and viewed waveform using gtkwave analyser.    
+**Week-1 Day2**:
 - run Yosys for synthesis after read_verilog, read_liberty, synth -top, abc -liberty.
 - Show the Synthesis mapping for good_mux.v - using sky130nm PDK
 - Synthesized Netlist was input to iverilog along with library sky130_fd_sc_hd.v
@@ -23,7 +22,7 @@ Initial introduction of Test Bench & Stimulus (Test Vectors)
   /path/to/primitives.v
 - $ vvp sim_netlist.out
 - $ gtkwave dump.vcd
-- compiled using iverilog, created dump value file and viewed waveform using gtkwave analyser.
+- compiled using iverilog, created dump value file and viewed waveform using gtkwave analyser.  
 
 **Week-2**:
 
