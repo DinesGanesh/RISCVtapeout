@@ -11,7 +11,7 @@ Initial introduction of Test Bench & Stimulus (Test Vectors)
 - Tried to create a new verilog file with a simple XOR gate.
 - Developed test bench(tb) for the XOR gate.
 - Fixed some bugs with the tb Code with the dumpvars.
-- compiler using iverilog, created dump value file and viewed waveform using gtkwave analyser.
+- compiler using iverilog, created dump value file and viewed waveform using gtkwave analyser.  
 **Day-2**:
 - run Yosys for synthesis after read_verilog, read_liberty, synth -top, abc -liberty.
 - Show the Synthesis mapping for good_mux.v - using sky130nm PDK
