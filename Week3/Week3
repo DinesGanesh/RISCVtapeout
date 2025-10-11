@@ -1,17 +1,68 @@
-Week3:
+Gate-Level Simulation of BabySoC
+▶️ Synthesis Tool: Yosys
 
-**Gate Level simulation of BabySOC** -
+The synthesis process involves converting RTL Verilog code into a gate-level netlist using a standard cell library. Below are the key steps followed using Yosys:
 
-**Tool: Yosys **
-1.Reading Verilog files
-2.Reading Library files
-3.synth -top
-4.Optimization and Technology mapping
-5.Finally Staticstics 
+Reading Verilog Design Files
+All RTL design files (*.v) are read into Yosys using the read_verilog command. This includes the top-level module and all its submodules.
 
-output Post synthesis netlist.v
+Reading Standard Cell Library
+A technology-specific liberty file (.lib) or gate-level Verilog model (sky130_fd_sc_hd.v) is provided using read_liberty or read_verilog depending on format.
 
-**Tool: iverilog -o**
-1.run the netlist file using necessary dependent design files and library files.
-2.waveform viewing the same dump file created in the previous step. 
-3.Anaog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2) 
+Optimization and Technology Mapping :
+Yosys performs logic optimizations and maps the RTL to technology-specific gates from the provided standard cell library.
+
+Output and Statistics
+The synthesized netlist is written to a gate-level Verilog file (e.g., vsdbabysoc_post_synth.v) using:
+
+write_verilog vsdbabysoc_post_synth.v
+
+Yosys also provides area and cell usage statistics to validate synthesis quality.
+Gate-Level Simulation Tool: Icarus Verilog (iverilog)
+
+After synthesis, the gate-level netlist is simulated to verify functional equivalence with the RTL behavior.
+
+Compiling the Netlist and Dependencies
+The synthesized gate-level netlist (vsdbabysoc_post_synth.v) is compiled along with required dependent RTL files (e.g., PLL, DAC modules) and standard cell models using:
+iverilog -o /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim/post_synth_sim.out \
+  -DPOST_SYNTH_SIM \
+  -DFUNCTIONAL \
+  -DUNIT_DELAY='#1' \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/include \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/sky130_fd_sc_hd.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/primitives.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module/testbench.v
+
+This generates the waveform dump file (wave.vcd) if $dumpfile and $dumpvars are defined in the testbench.
+
+Special attention is given to the dout signal, where its gate-level waveform is observed to ensure it matches the behavior seen in functional simulation (Week 2). Matching outputs confirm that synthesis preserved the intended logic.
+
+Errors Faced :
+/home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth/vsdbabysoc.synth.v:37635: error: Unknown module type: avsddac
+/home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth/vsdbabysoc.synth.v:37640: error: Unknown module type: avsdpll
+5886 error(s) during elaboration.
+*** These modules were missing:
+        avsddac referenced 1 times.
+        avsdpll referenced 1 times.
+        sky130_fd_sc_hd__a2111oi_0 referenced 8 times.
+        sky130_fd_sc_hd__a211oi_1 referenced 12 times.
+        sky130_fd_sc_hd__a21boi_0 referenced 3 times.
+        sky130_fd_sc_hd__a21o_2 referenced 4 times.
+        sky130_fd_sc_hd__a21oi_1 referenced 682 times.
+
+Tried to supply all the dependent file through one command line - as follows 
+
+iverilog -o /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim/post_synth_sim.out \
+  -DPOST_SYNTH_SIM \
+  -DFUNCTIONAL \
+  -DUNIT_DELAY='#1' \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/include \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/sky130_fd_sc_hd.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/primitives.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module/testbench.v
