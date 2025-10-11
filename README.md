@@ -58,4 +58,4 @@ output Post synthesis netlist.v
 3.Analog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
 **Error Log are highlight in the week's folder.**    
 **Reference Repo:**  
-https://github.com/Ananya-KM/VSD_HDP/blob/main/Day 6.md
+https://github.com/Ananya-KM/VSD_HDP/blob/main/Day6.md
