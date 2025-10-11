@@ -52,10 +52,25 @@ https://github.com/manili/VSDBabySoC.git
 5.Finally Staticstics    
 output Post synthesis netlist.v    
 
+
+
 **Tool: iverilog -o**  
 1.run the netlist file using necessary dependent design files and library files.  
 2.waveform viewing the same dump file created in the previous step.   
 3.Analog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
-**Error Log are highlight in the week's folder.**    
+**Error Log are highlight in the week's folder.**      
+
+iverilog -o /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim/post_synth_sim.out \
+  -DPOST_SYNTH_SIM \
+  -DFUNCTIONAL \
+  -DUNIT_DELAY='#1' \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/include \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim \
+  -I /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/sky130_fd_sc_hd.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/gls_model/primitives.v \
+  /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module/testbench.v
+    
 **Reference Repo:**  
 https://github.com/Ananya-KM/VSD_HDP/blob/main/Day6.md
