@@ -38,7 +38,7 @@ What does BabySoC include?
 - 10-bit DAC
 Written in Verilog, tlv for simulation and synthesis.
 Integrates cleanly with OpenLANE, the open-source ASIC flow.<br>
-**Tools & library install**:
+**Reference Repo:**:
 https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project
 https://github.com/manili/VSDBabySoC.git
 
@@ -56,5 +56,6 @@ output Post synthesis netlist.v
 1.run the netlist file using necessary dependent design files and library files.  
 2.waveform viewing the same dump file created in the previous step.   
 3.Analog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
-**Error Log are highlight in the week's folder.**  
-
+**Error Log are highlight in the week's folder.**    
+**Reference Repo:**  
+https://github.com/Ananya-KM/VSD_HDP/blob/main/Day 6.md
