@@ -73,4 +73,18 @@ iverilog -o /home/vsduser/Desktop/work/tools/VSDBabySoC/output/post_synth_sim/po
   /home/vsduser/Desktop/work/tools/VSDBabySoC/src/module/testbench.v
     
 **Reference Repo:**  
-https://github.com/Ananya-KM/VSD_HDP/blob/main/Day6.md
+https://github.com/Ananya-KM/VSD_HDP/blob/main/Day6.md  
+
+**Static Timing Analysis:**
+1. Setup time and hold time are two of the most critical timing constraints in digital design, especially in synchronous circuits.  
+Setup Time Constraint : Tclk_Q + Tcomb + Tsetup ≤ Tclk  
+2. Hold Time Constraint:  
+Tclk_Q + Tmin_comb ≥ Thold  
+3. Arrival Time (AT):  
+The actual time at which a signal reaches a particular point (usually a flip-flop input or output) in a timing path.
+4. Required Time (RT)  
+The latest time by which a signal must arrive at a certain point to meet timing constraints, like setup or hold time.
+Slack = Required Time – Arrival Time
+Slack = -ve means timing not met.
+
+
