@@ -55,6 +55,6 @@ output Post synthesis netlist.v
 **Tool: iverilog -o**  
 1.run the netlist file using necessary dependent design files and library files.  
 2.waveform viewing the same dump file created in the previous step.   
-3.Anaog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
-Error Log are highlight in the week's folder.  
+3.Analog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
+**Error Log are highlight in the week's folder.**  
 
