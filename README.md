@@ -42,18 +42,19 @@ Integrates cleanly with OpenLANE, the open-source ASIC flow.<br>
 https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/12.%20VSDBabySoC%20Project
 https://github.com/manili/VSDBabySoC.git
 
+**Week3:**  
+**Gate Level simulation of BabySOC** -  
+**Tool: Yosys **  
+1.Reading Verilog files  
+2.Reading Library files  
+3.synth -top  
+4.Optimization and Technology mapping  
+5.Finally Staticstics    
+output Post synthesis netlist.v    
 
-Week3:
-**Gate Level simulation of BabySOC** -
-**Tool: Yosys **
-1.Reading Verilog files
-2.Reading Library files
-3.synth -top
-4.Optimization and Technology mapping
-5.Finally Staticstics 
-output Post synthesis netlist.v
+**Tool: iverilog -o**  
+1.run the netlist file using necessary dependent design files and library files.  
+2.waveform viewing the same dump file created in the previous step.   
+3.Anaog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2)  
+Error Log are highlight in the week's folder.  
 
-**Tool: iverilog -o**
-1.run the netlist file using necessary dependent design files and library files.
-2.waveform viewing the same dump file created in the previous step. 
-3.Anaog Waveform format of "dout" is clearly the same as that fo functional simulation. (Week2) 
