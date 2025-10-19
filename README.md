@@ -87,4 +87,9 @@ The latest time by which a signal must arrive at a certain point to meet timing 
 Slack = Required Time – Arrival Time
 Slack = -ve means timing not met.
 
+**Week4 :**  
+Tools : LTSPICE, NGSPICE  
+Started with CMOS Characteristics - Pull-up Network & Pull-Down Network.
+CMOS Inverter VTC Curve.
+
 
