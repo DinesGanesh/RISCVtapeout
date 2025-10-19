@@ -89,7 +89,8 @@ Slack = -ve means timing not met.
 
 **Week4 :**  
 Tools : LTSPICE, NGSPICE  
-Started with CMOS Characteristics - Pull-up Network & Pull-Down Network.
-CMOS Inverter VTC Curve.
-
+Started with MOS Characteristics - Various regions of Operation - Second Order Non-idealities  
+CMOS Inverter VTC Curve - Switching threshold - Deciding Margins.  
+- Pull-up Network & Pull-Down Network.  
+--Pending Work    
 
